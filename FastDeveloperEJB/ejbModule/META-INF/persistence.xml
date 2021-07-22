@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="FastDeveloperEJB" transaction-type="JTA">
+		<jta-data-source>JNDIPersona</jta-data-source>
+		<class>Data.Autor</class>
+		<class>Data.Boleta</class>
+		<class>Data.CabeceraFactura</class>
+		<class>Data.Categoria</class>
+		<class>Data.Cliente</class>
+		<class>Data.Comuna</class>
+		<class>Data.Contrato</class>
+		<class>Data.CopiaLibro</class>
+		<class>Data.Correo</class>
+		<class>Data.DatalleBoleta</class>
+		<class>Data.DetalleFactura</class>
+		<class>Data.Devolucion</class>
+		<class>Data.Direccion</class>
+		<class>Data.Distribuidor</class>
+		<class>Data.Editorial</class>
+		<class>Data.EstadoLibro</class>
+		<class>Data.Idioma</class>
+		<class>Data.Libro</class>
+		<class>Data.LibroAutor</class>
+		<class>Data.LibroCategoria</class>
+		<class>Data.MetodoPago</class>
+		<class>Data.MetodoPagoBoleta</class>
+		<class>Data.PrecioLibro</class>
+		<class>Data.Prestamo</class>
+		<class>Data.Telefono</class>
+		<class>Data.TipoPrecio</class>
+		<class>Data.TipoUser</class>
+		<class>Data.Trabajador</class>
+		<class>Data.Usuario</class>
+	</persistence-unit>
+</persistence>
