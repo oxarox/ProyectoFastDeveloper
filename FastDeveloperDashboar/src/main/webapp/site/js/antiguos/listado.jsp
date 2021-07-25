@@ -2,9 +2,7 @@
     pageEncoding="UTF-8"%>
     
      <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.util.List"%>
-<%@page import="cl.inacap.Odiseo.DTO.Libro"%>
+
 
 
 <jsp:include page="Header.jsp" />
@@ -89,35 +87,29 @@
          		 	<th>Paginas</th>
          		 	<th>Categoria</th>
          		 	<th>Portada</th>
-         		 	<th>Detalle</th>
+         		 	<th>Stock</th>
          		 	<th>Editar Libro</th>
          		 	<th>Eliminar Libro</th>
-         		 
+         		 	
          		 </tr>
          		</thead>
          		
          		<tbody>
-         		<% 
-         		List<Libro> LLibros;
-         		LLibros = (ArrayList<Libro>)request.getAttribute("ListaLibros");
-         		%>
-         
-         		<% for(int i=0; i<LLibros.size();i++ ){ 
-         			Libro o = LLibros.get(i);
-         		%>
+         		<c:forEach items="${ListaLibros}" var="o" varStatus="ciclo">
          		<tr>
-         			<td><%=o.getNombreLibro() %></td>
-         			<td><%=o.getAutorLibro() %></td>
-         			<td><%=o.getCantPaginas() %></td>
-         			<td><%=o.getCategoria() %></td>
-         			<td><img src=<%=o.getPortada()%> width="256" height="256" /></td>
-         			<td class="text-center"><a class="btn btn-sm btn-primary" href="Detalle.do?Iden=<%=i%>">Detalle Libro</a></td>
-         			<td class="text-center"><a class="btn btn-sm btn-success" href="EditLibro.do?Iden=<%=i%>">Editar libro</a></td>
-                    <td class="text-center"><button  id="borrar" class="btn btn-sm btn-danger" onclick="deleteLibro(<%=i%>,'Nombre de Libro fila')">Eliminar Libro</button></td>
+         			<td>${o.Nombre }</td>
+         			<td>${o.Autor }</td>
+         			<td>${o.Paginas }</td>
+         			<td>${o.Categoria }</td>
+         			<td>${o.Portada }</td>
+         			<td class="text-center"><a class="btn btn-sm btn-outline-success" href="EditPersona.do?Iden=${ciclo.index}"><i class="far fa-edit"></i></a></td>
+                    <td class="text-center"><button class="btn btn-sm btn-outline-danger" onclick="deletePersona(${ciclo.index},'Nombre de persona fila')"><i class="fas fa-trash-alt"></i></button></td>
+                        	
          		</tr>
-         		<% }%>
-         	
+         		</c:forEach>
          		</tbody>
+         		
+         		
          		</table>
          	
          	
@@ -133,19 +125,29 @@
   </div>
 </section>
 
+   
+
+ 
+ 
+ 
+ 
+ 
+
+
  <jsp:include page="Footer.jsp"/>
  <script>
     $(document).ready(function (){
        
         $('#myTable').DataTable();
-        
 
     });
 
-    function deleteLibro(LLibros,i){
+    
+
+    function deletePersona(Index,NombrePersona){
         $.confirm({
             title: "Consulta",
-            content: "Seguro de eliminar a "+NombreLibro,
+            content: "Seguro de eliminar a "+NombrePersona,
             icon: 'fa fa-question-circle-o',
             theme: 'supervan',
             closeIcon: false,
@@ -158,17 +160,17 @@
                     action: function(heyThereButton){
                       	
                     	var jsonSend={
-                    		'Id':i
+                    		'Id':Index
                     	}
                     	
                     	
                     	$.ajax({
                     		type: "POST",
-                    		url : "ListarLibros.do",
-                        	data: {"Id":i,"Opc":1},
+                    		url : "ListartPersonas.do",
+                        	data: {"Id":Index,"Opc":1},
                         	success:function (obj){
                         		console.log(obj)		
-                        		alert("Se elimino el libro")
+                        		alert("Se elimino la persona")
                         		setTimeout("location.reload()",4000);
                         		
                         	}

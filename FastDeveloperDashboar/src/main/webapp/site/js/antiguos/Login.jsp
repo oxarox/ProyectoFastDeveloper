@@ -18,40 +18,22 @@
 		<div class="container">
         <div class="row align-item-center justify-content-center" style="margin-top: 10%; margin-bottom:10%">
             <div class="col-md-4 col-centered ">
-               
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h1>Login al sistema.</h1>
                         </div>
-
                     </div>
-                    
-
-
-                    <label for="nombreUsuario">
-                        Usuario
-                    </label>
+                    <label for="nombreUsuario">Usuario</label>
                     <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario">
-
                     <br>
-
+                    
                     <label for="passUsuario">Password Usuario</label>
                     <input type="password" class="form-control" id="passUsuario" name="passUsuario">
-
                     <br>
-
-
+                    
                     <button type="button" class="btn btn-outline-success btn-block" onclick="LoginAcc()">Ingresar</button>
-
-                
-            
             </div>
-            
-
-
-           
         </div>
-
     </div>
 
 	
