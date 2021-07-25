@@ -57,6 +57,11 @@
 						'passUsuario':$("#passUsuario").val()
 						
 				}
+				
+				//se que a lo mejor ajax complica, pero queria
+				//practicar lo que hizo el profe
+				//me enrede para entenderlo la verdad jajaja
+				
 				$.ajax({
 					type:"POST",
 					data:ObjSend,
