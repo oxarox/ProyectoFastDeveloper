@@ -3,6 +3,7 @@
 	<name>FastDeveloperDashboar</name>
 	<comment></comment>
 	<projects>
+		<project>FastDeveloperEJB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -43,6 +43,5 @@ public class Contrato implements Serializable {
 		this.fechaContrato = fechaContrato;
 	}
 	
-	
 
 }
