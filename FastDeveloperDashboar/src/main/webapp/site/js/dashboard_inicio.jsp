@@ -159,7 +159,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 
   <!--   Core JS Files   -->
   <script src="../Html/assets/js/core/jquery.min.js"></script>
@@ -201,6 +201,10 @@
         x.style.display = "none";
       }
     }
+    
+    //<%
+   // session.invalidate(); esto deberia ir en el boton log out
+	//%>
     
     
   </script>

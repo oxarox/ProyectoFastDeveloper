@@ -45,5 +45,26 @@ public class UsuariosService {
 		}
 		return tipoUsuario;
 	}
+	
+	
+	
+	public int verificarTipoUsuarioByNombre(String usuario){
+        EntityManager em = this.emf.createEntityManager();
+        int tipoUsuario = 0;
+        try {
+            List<Usuario> listaUsuario = new  ArrayList<Usuario>();
+            listaUsuario =  em.createNamedQuery("Usuario.getAll", Usuario.class).getResultList();
+            for (Usuario usuario2 : listaUsuario) {
+                if (usuario2.getNombreUsuario().equals(usuario)) {
+                    tipoUsuario =  usuario2.getId_tipo_usuario();
+                }
+            }
+        }catch(Exception ex){
+            return tipoUsuario; 
+        }finally {
+            em.close();
+        }
+        return tipoUsuario;
+    }
 }
 

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
+
+import Service.UsuariosService;
 
 /**
  * Servlet implementation class arriendo
@@ -22,6 +25,7 @@ public class arriendo extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    private UsuariosService us;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,13 +34,23 @@ public class arriendo extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession sessionValida= request.getSession(true);
         if(sessionValida.getAttribute("SessionActiva")=="1") {
+        	
+        	if(us.verificarTipoUsuarioByNombre(request.getParameter("Usuario"))==2) {
             //La fuente siempre cuando exista una session en este caso SessionActiva =="1"
-            request.getRequestDispatcher("site/js/dashboard_inicio.jsp").forward(request, response);
+            request.getRequestDispatcher("site/js/arriendo.jsp").forward(request, response);
 
+        }else {
+        	//span
+    		JOptionPane.showMessageDialog(null, "No tiene permiso para ver esta pestania");
+        	response.sendRedirect("Site/js/dashboard_inicio.jsp");
+        }
+        	
+        	
         }else {
             response.sendRedirect("login2.do");
 
         }
+        
 	}
 
 	/**
