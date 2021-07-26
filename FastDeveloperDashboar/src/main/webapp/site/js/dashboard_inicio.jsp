@@ -72,6 +72,8 @@
                   </div>
                 </div>
               </div>
+              
+              <!-- Este div es en un ciclo for, con javascrip que recibe datos del mysql**DESTACADOS -->
               <div class="recommendations">
                 <div class="bookRec" onclick="hide()">
                   <img src="../Html/assets/img/prideAndPrejudice.jpg">
@@ -199,6 +201,8 @@
         x.style.display = "none";
       }
     }
+    
+    
   </script>
 </body>
 </html>

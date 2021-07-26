@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Service.UsuariosService;
 
 /**
  * Servlet implementation class login2
@@ -21,6 +22,8 @@ public class login2 extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    private UsuariosService us;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,7 +37,28 @@ public class login2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		
+		String Usuario= request.getParameter("nombreUsuario").toString();
+		String Password= request.getParameter("nombrePassword").toString();
+		
+		// id_user=Ana cliente  1, Jose vendedor1 2, Pepa vendedor2	3						
+		//password
+		
+		int tipo_usuario= us.buscarUsuario(Usuario, Password); //servicio
+		
+		//0= refuse , los demas pasan a home
+		
+		//revisar si logea
+		
+		if(tipo_usuario==0) {
+			System.out.println("0");
+		}else {
+			System.out.println("1");
+			request.setAttribute("Usuario", Usuario);
+			 //buscar a traves del usuario de do a do????
+		}
+		
+		
 
+}
 }
