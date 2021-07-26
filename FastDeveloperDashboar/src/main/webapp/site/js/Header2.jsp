@@ -40,7 +40,7 @@
             </a>
           </li>
           <li>
-            <a href="rent.jsp">
+            <a href="arriendo.jsp">
               <i class="material-icons">collections_bookmark</i>
               <p> Arriendos </p>
             </a>

@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
+
+import Service.UsuariosService;
 
 /**
  * Servlet implementation class buying
@@ -22,6 +25,7 @@ public class buying extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    private UsuariosService us;
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,8 +35,16 @@ public class buying extends HttpServlet {
 		HttpSession sessionValida= request.getSession(true);
         if(sessionValida.getAttribute("SessionActiva")=="1") {
             //La fuente siempre cuando exista una session en este caso SessionActiva =="1"
-            request.getRequestDispatcher("site/js/buying.jsp").forward(request, response);
-
+        	
+        	if(us.verificarTipoUsuarioByNombre(request.getParameter("Usuario"))==2) {
+        		
+        		 request.getRequestDispatcher("Site/js/buying.jsp").forward(request, response);
+        	}else {
+        		//span de Alerta Accseso Denegado	
+        		JOptionPane.showMessageDialog(null, "No tiene permiso para ver esta pestania");
+        		response.sendRedirect("Site/js/dashboard_inicio.jsp");
+        	}
+     
         }else {
             response.sendRedirect("login2.do");
 
