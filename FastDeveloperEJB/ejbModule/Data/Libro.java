@@ -6,8 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity(name = "libros")
+@NamedQueries({
+    @NamedQuery(name="Libro.getAll",query="select l from libros l")
+})
 public class Libro implements Serializable{
 	
 	
@@ -34,6 +39,14 @@ public class Libro implements Serializable{
 	@Column(name="numeros_paguina")
 	private int numerosPaguina;
 
+	@Column(name="portada")
+	private String portada;
+	
+	@Column(name="destacado")
+	private int destacado;
+	
+	@Column(name="tipo_libro")
+	private char tipoLibro;
 	
 	public String getCodigoIsbn() {
 		return codigoIsbn;
@@ -89,5 +102,29 @@ public class Libro implements Serializable{
 
 	public void setNumerosPaguina(int numerosPaguina) {
 		this.numerosPaguina = numerosPaguina;
+	}
+	
+	public String getPortada() {
+		return portada;
+	}
+
+	public void setPortada(String portada) {
+		this.portada = portada;
+	}
+	
+	public int getDestacado() {
+		return destacado;
+	}
+
+	public void setDestacado(int destacado) {
+		this.destacado = destacado;
+	}
+	
+	public char getTipoLibro() {
+		return tipoLibro;
+	}
+
+	public void setTipoLibro(char tipoLibro) {
+		this.tipoLibro = tipoLibro;
 	}
 }
