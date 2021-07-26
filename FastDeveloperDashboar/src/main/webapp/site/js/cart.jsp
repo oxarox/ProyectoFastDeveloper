@@ -90,9 +90,11 @@
                                                 <th class="text-center">Eliminar</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody> 
+                                        <!-- En este tbody va la COMPRA DEL LIBRO -->
                                             <tr>
                                                 <td class="row" style="padding: 1rem;">
+                                                <!-- Datos del libro -->
                                                     <img class="col-2" src="../Html/assets/img/annaKarenina2.jpg">
                                                     <div class="col-6">
                                                         <p>Anna Karenina</p>
@@ -102,11 +104,14 @@
                                                     </div>
                                                 </td>
                                                 <td>
+                                                <!-- Cantidad de unidades a comprar -->
                                                     <input class="form-control" type="text" value="1" maxlength="3"
                                                         id="quantity" onkeyup="return onlyNumbers(event)"
                                                         style="width: 5rem;">
 
                                                 </td>
+                                                <!-- Precio, debe mostrarse el TOTAL -->
+                                                <!-- Agregar IVA, Precio Neto, Precio con IVA -->
                                                 <td class="text-center">$13500</td>
                                                 <td class="text-center">
                                                     <i class="material-icons">delete</i>
@@ -114,6 +119,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    
+                                    
                                     <table class="table tablesorter" id="tableRent"
                                         style="padding: 2rem; display: none;">
                                         <thead class="text-primary"
@@ -126,8 +133,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <!-- En este TBODY va el ARRIENDO del libro -->
                                             <tr>
                                                 <td class="row" style="padding: 1rem;">
+                                                <!-- Precios de arriendo e informacion -->
                                                     <img class="col-2" src="../Html/assets/img/writtenInTheWater.jpg">
                                                     <div class="col-6">
                                                         <p>Escrito en el Agua</p>
@@ -139,19 +148,22 @@
                                                     </div>
                                                 </td>
                                                 <td>
+                                                <!-- Cantidad unidades -->
                                                     <input class="form-control" type="text" value="3" maxlength="3"
                                                         id="quantity" onkeyup="return onlyNumbers(event)"
                                                         style="width: 5rem;">
 
                                                 </td>
-                                                <td class="text-center" value="">$4.500</td>
+                                                <td class="text-center" value="">$4.500</td> <!-- Sumatoria segun unidades -->
                                                 <td class="text-center">
-                                                    <i class="material-icons">delete</i>
+                                                    <i class="material-icons">delete</i> <!-- Eliminar de la lista -->
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                
+                                
                             </div>
                         </div>
                     </div>

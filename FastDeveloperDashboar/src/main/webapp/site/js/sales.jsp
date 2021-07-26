@@ -62,7 +62,7 @@
             <!-- BOOK CATALOG -->
 
             <div class="content">
-                <div class="row">
+                <div class="row"> <!-- En este div cargar los libros en VENTA de la base de datos -->
                     <div class=" catalog row">
                         <div class="col-6 catBook">
                             <img src="../Html/assets/img/annaKarenina2.jpg">

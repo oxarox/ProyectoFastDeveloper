@@ -1,8 +1,8 @@
 package Service;
 
+
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -14,6 +14,7 @@ import Data.*;
 @Stateless
 @LocalBean
 public class UsuariosService {
+
 
 	private EntityManagerFactory emf = Persistence.createEntityManagerFactory("FastDeveloperEJB");
 	
@@ -45,3 +46,4 @@ public class UsuariosService {
 		return tipoUsuario;
 	}
 }
+

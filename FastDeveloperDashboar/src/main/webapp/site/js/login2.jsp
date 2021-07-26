@@ -57,15 +57,20 @@
 						'passUsuario':$("#passUsuario").val()
 						
 				}
+				
+				//se que a lo mejor ajax complica, pero queria
+				//practicar lo que hizo el profe
+				//me enrede para entenderlo la verdad jajaja
+				
 				$.ajax({
 					type:"POST",
 					data:ObjSend,
-					url:"Login.do",// aqui tengo el problema no encuentra el login.do
+					url:"login2.do",
 					success:function(varObjBackend){
 						//console.log(varObjBackend);
 						if(varObjBackend==true){
 							alert("Redireccionando")
-							location.href="Home.do"
+							location.href="dashboard_inicio.do"
 							
 						}else{
 							alert("Datos incorrectos")
