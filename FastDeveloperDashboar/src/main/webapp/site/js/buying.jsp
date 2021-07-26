@@ -60,6 +60,8 @@
         </div>
       </div>
       <!-- End Navbar -->
+      
+      <!-- Inicio Formulario ingreso  -->
       <div class="content">
         <div class="row">
           <div class="col-md-12">

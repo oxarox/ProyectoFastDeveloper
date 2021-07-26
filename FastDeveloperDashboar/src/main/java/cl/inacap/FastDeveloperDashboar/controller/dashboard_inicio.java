@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class dashboard_inicio
@@ -27,7 +28,18 @@ public class dashboard_inicio extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		HttpSession sessionValida= request.getSession(true);
+        if(sessionValida.getAttribute("SessionActiva")=="1") {
+            //La fuente siempre cuando exista una session en este caso SessionActiva =="1"
+            request.getRequestDispatcher("site/js/dashboard_inicio.jsp").forward(request, response);
+
+        }else {
+            response.sendRedirect("login2.do");
+
+        }
+			
+	
 	}
 
 	/**
@@ -35,7 +47,8 @@ public class dashboard_inicio extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//segun el tipo de usuario 
+		
 	}
 
 }
