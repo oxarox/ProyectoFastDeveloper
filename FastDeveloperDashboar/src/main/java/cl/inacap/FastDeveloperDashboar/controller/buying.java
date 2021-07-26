@@ -56,7 +56,7 @@ public class buying extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//Aca se debe gestionar el POST a la bd 
 	}
 
 }

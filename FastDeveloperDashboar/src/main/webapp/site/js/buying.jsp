@@ -70,6 +70,8 @@
                 <h5 class="title">Compra/Ingreso de libros</h5>
               </div>
               <div class="card-body">
+              
+              <!-- Inicio Formulario -->
                 <form>
                   <div class="row">
                     <div class="col-md-5 pr-md-1">
